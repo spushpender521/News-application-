@@ -15,8 +15,8 @@ constructor(props) {    //  Once the things will lie under this.state then after
 super(props)
 this.state={
 articles: [],    //same
-loading:true,
-page:1,
+loadineg:true,
+pag:1,
 totalResults:0  
 }
 document.title =`NewsApplication App - ${this.capitilize(this.props.category)}`; 

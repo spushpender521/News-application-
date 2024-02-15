@@ -15,7 +15,7 @@ constructor(props) {    //  Once the things will lie under this.state then after
 super(props)
 this.state={
 articles: [],    //same
-loadineg:true,
+loading:true,
 pag:1,
 totalResults:0  
 }
@@ -37,8 +37,8 @@ let data= await fetch(url)
 }
   fetchMoreData= async()=>{ 
   this.setState({page:this.state.page+1}) 
-  let url= `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=6754ab9af4234b38bb1ff3973163062e&page=${this.state.page+1}&pageSize=${this.props.pagesize}`
-    let data= await fetch(url)
+  let url= `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&page=${this.state.page+1}&pageSize=${this.props.pagesize}&apiKey=6754ab9af4234b38bb1ff3973163062e`
+  let data= await fetch(url)
     let parseData= await data.json() 
     this.setState({
     articles:this.state.articles.concat(parseData.articles),

@@ -9,14 +9,14 @@ export class News extends Component {
  capitilize=(cap)=>{
   return cap.charAt(0).toUpperCase()+cap.slice(1)
 
-}
+}   
  
 constructor(props) {    //  Once the things will lie under this.state then after this  whenever  we try to  use aticles and page we use this.state before articles and page  
 super(props)
 this.state={
 articles: [],    //same
 loading:true,
-pag:1,
+page:1,
 totalResults:0  
 }
 document.title =`NewsApplication App - ${this.capitilize(this.props.category)}`; 
